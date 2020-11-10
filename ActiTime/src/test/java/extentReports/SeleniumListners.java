@@ -22,14 +22,12 @@ public class SeleniumListners extends BaseClass implements ITestListener {
 
 	
 	public void onTestSuccess(ITestResult result) {
-		// TODO Auto-generated method stub
 		PrintUtil.testCasePassedWithScreenshot(driver, "Test Case Passed");
 		
 	}
 
 	
 	public void onTestFailure(ITestResult result) {
-		// TODO Auto-generated method stub
 		PrintUtil.testCaseFailedWithScreenshot("Test Case Failed", driver);
 	}
 

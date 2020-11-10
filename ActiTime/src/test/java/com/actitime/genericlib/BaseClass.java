@@ -39,17 +39,17 @@ public class BaseClass {
 		String url = CommonUtils.getPropertiesFileData(commonDataPropertiesFile, "url");
 
 		if (browser.equalsIgnoreCase("Chrome")) {
-			System.setProperty("webdriver.chrome.driver","./src/test/resources/chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "./chromedriver.exe");
 			driver = new ChromeDriver();
 		} else
 
 		if (browser.equalsIgnoreCase("FireFox")) {
-			System.setProperty("webdriver.gecko.driver", "./src/test/resources/geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver", "./geckodriver.exe");
 			driver = new FirefoxDriver();
 		} else
 
 		if (browser.equalsIgnoreCase("IE")) {
-			System.setProperty("webdriver.ie.driver","./src/test/resources/IEDriverServer.exe");
+			System.setProperty("webdriver.ie.driver", "./IEDriverServer.exe");
 			driver = new InternetExplorerDriver();
 		}
 		driver.manage().window().maximize();
@@ -64,14 +64,12 @@ public class BaseClass {
 		loginPage.loginPage(userName, password);
 
 	}
-	
+
 	@AfterMethod
-	public static void logoutApp(){
+	public static void logoutApp() {
 		HomePage homePage = PageFactory.initElements(driver, HomePage.class);
 		homePage.logout();
 	}
-	
-	
 
 	@AfterClass
 	public static void afterClassConfigure() {

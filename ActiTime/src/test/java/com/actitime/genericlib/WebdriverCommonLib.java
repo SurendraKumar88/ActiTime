@@ -42,7 +42,7 @@ public class WebdriverCommonLib extends BaseClass {
 		waitForElement(element);
 		element.clear();
 		element.sendKeys(enterData);
-		printMessage("Successfully "+enterData+" sent to TextBox");
+		printMessage("Successfully " + enterData + " sent to TextBox");
 
 	}
 
@@ -58,8 +58,8 @@ public class WebdriverCommonLib extends BaseClass {
 		waitForElement(element);
 		Select sel = new Select(element);
 		sel.selectByVisibleText(data);
-		printMessage("Successfully "+data+" selected from drop down");
-		
+		printMessage("Successfully " + data + " selected from drop down");
+
 	}
 
 	public static void selectByValuebasedOnAttribute(WebElement element, String attribute) {
@@ -143,14 +143,14 @@ public class WebdriverCommonLib extends BaseClass {
 	}
 
 	public static boolean verifyLinkIsDisplayed(String link) {
-		
-		WebElement element=null;
-		try{
+
+		WebElement element = null;
+		try {
 			element = driver.findElement(By.linkText(link));
-		}catch(Exception e){
-			
+		} catch (Exception e) {
+
 		}
-		
+
 		waitForElement(element);
 		boolean result = element.isDisplayed();
 
@@ -163,5 +163,12 @@ public class WebdriverCommonLib extends BaseClass {
 		boolean result = element.isDisplayed();
 
 		return result;
+	}
+
+	public static void printMessage(int value) {
+
+		System.out.println(value);
+		Reporter.log(Integer.toString(value));
+		PrintUtil.logger.info(value);
 	}
 }
