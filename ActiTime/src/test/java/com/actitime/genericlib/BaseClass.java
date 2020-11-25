@@ -63,6 +63,19 @@ public class BaseClass {
 		LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
 		loginPage.loginPage(userName, password);
 
+		/*
+		 * WebElement ele = driver.findElement(By.id("username")); WebElement
+		 * pwd = driver.findElement(By.name("pwd")); WebElement loginClick =
+		 * driver.findElement(By.id("loginButton"));
+		 * 
+		 * JavascriptExecutor js = (JavascriptExecutor)driver;
+		 * js.executeScript("arguments[0].value='admin'", ele);
+		 * 
+		 * js.executeScript("arguments[0].value='manager'",pwd);
+		 * 
+		 * js.executeScript("arguments[0].click()", loginClick);
+		 */
+
 	}
 
 	@AfterMethod

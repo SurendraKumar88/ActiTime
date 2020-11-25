@@ -10,7 +10,7 @@ public class GetEmployeeName {
 	@Test
 	public static void getEmployeeNames(){
 
-		String url = "http://dummy.restapiexample.com/api/v1/employees";
+		String url = "https://gorest.co.in/public-api/users/123/posts";
 
 		Response responce = ApiCommonLib.getService(url);
 
